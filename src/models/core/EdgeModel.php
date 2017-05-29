@@ -8,8 +8,7 @@
 
 namespace Rocco\ArangoORM\Models\Core;
 
-
-use DB\DB;
+use Rocco\ArangoORM\DB\DB;
 use triagens\ArangoDb\Edge;
 
 /**
