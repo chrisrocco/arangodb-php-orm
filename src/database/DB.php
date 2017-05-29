@@ -196,7 +196,7 @@ class DB
 
 
 
-    static function initCollections( $collection_schema ){
+    static function buildFromSchema( $collection_schema ){
         $ch = self::getCollectionHandler();
         foreach ($collection_schema as $name => $type){
             if($ch->has($name)) continue;
@@ -209,7 +209,7 @@ class DB
             print "created $type collection: $name \n";
         }
     }
-    static function populateCollections( $document_schema ){
+    static function createDocuments( $document_schema ){
         $dh = self::getDocumentHandler();
 
         foreach ( $document_schema as $collection_name => $document_set ){
@@ -223,7 +223,7 @@ class DB
             }
         }
     }
-    static function dropCollections(  ){
+    static function nuke(  ){
         $ch = self::getCollectionHandler();
         $collections = $ch->getAllCollections([ 'excludeSystem' => true ]);
         foreach ($collections as $name => $type){
@@ -232,7 +232,7 @@ class DB
             $ch->drop( $name );
         }
     }
-    static function truncateCollections(  ){
+    static function truncate(  ){
         $ch = self::getCollectionHandler();
         $collections = $ch->getAllCollections([ 'excludeSystem' => true ]);
         foreach ($collections as $name => $type){
