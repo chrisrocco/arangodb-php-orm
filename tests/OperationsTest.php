@@ -1,6 +1,5 @@
 <?php
-use Rocco\ArangoORM\DB\DB;
-use Rocco\ArangoORM\Models\Core\EdgeModel;
+use rocco\ArangoORM\DB\DB;
 
 /**
 *  Corresponding Class to test YourClass class
