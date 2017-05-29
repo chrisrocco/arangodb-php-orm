@@ -1,0 +1,22 @@
+{
+    "caroler_types": [
+        {
+            "name": "singer",
+            "description": "I sing songs"
+        }
+    ],
+    "roles": [
+        {
+            "name": "admin"
+        },
+        {
+            "name": "caroler"
+        },
+        {
+            "name": "customer"
+        },
+        {
+            "name": "director"
+        }
+    ]
+}

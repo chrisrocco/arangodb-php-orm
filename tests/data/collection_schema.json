@@ -1,0 +1,15 @@
+{
+  "users":          "vertex",
+  "markets":        "vertex",
+  "events":         "vertex",
+  "caroler_types":  "vertex",
+  "roles":          "vertex",
+
+  "is_type":        "edge",
+  "is_role":        "edge",
+  "directs":        "edge",
+  "hosting":        "edge",
+  "needs_a":        "edge",
+  "performing_at":  "edge",
+  "in_market":      "edge"
+}
