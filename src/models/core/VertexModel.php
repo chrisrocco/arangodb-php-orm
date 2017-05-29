@@ -20,7 +20,7 @@ class VertexModel extends BaseModel {
     /**
      * Creates a new record in the database, wraps it in a model, and returns it.
      * @param $data array
-     * @return BaseModel
+     * @return VertexModel
      */
     public static function create( $data ){
 

@@ -9,7 +9,7 @@ use rocco\ArangoORM\DB\DB;
 *
 *  @author yourname
 */
-class OperationsTest extends PHPUnit_Framework_TestCase{
+class OperationsTest extends BaseTest {
 	
   /**
   * Just check if the YourClass has no syntax error 

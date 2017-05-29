@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce2af879-3c07-424a-8da4-d19db59bd6d7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ModelsTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/DB.php" afterPath="$PROJECT_DIR$/src/database/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/core/BaseModel.php" afterPath="$PROJECT_DIR$/src/models/core/BaseModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/core/EdgeModel.php" afterPath="$PROJECT_DIR$/src/models/core/EdgeModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/core/VertexModel.php" afterPath="$PROJECT_DIR$/src/models/core/VertexModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/BaseTest.php" afterPath="$PROJECT_DIR$/tests/BaseTest.php" />
@@ -25,99 +23,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="ModelsTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/ModelsTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="476">
+              <caret line="45" column="10" lean-forward="true" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding>
-                <element signature="e#119#161#0#PHP" expanded="true" />
-                <element signature="e#377#1177#0#PHP" expanded="false" />
-                <element signature="e#1376#1570#0#PHP" expanded="false" />
-                <element signature="e#1477#1563#0#PHP" expanded="false" />
-                <element signature="e#1500#1562#0#PHP" expanded="false" />
-                <element signature="e#1575#1819#0#PHP" expanded="false" />
-                <element signature="e#1824#1940#0#PHP" expanded="false" />
-                <element signature="e#1945#2060#0#PHP" expanded="false" />
-                <element signature="e#2065#2277#0#PHP" expanded="false" />
-                <element signature="e#2178#2270#0#PHP" expanded="false" />
-                <element signature="e#2217#2269#0#PHP" expanded="false" />
-                <element signature="e#2467#2609#0#PHP" expanded="false" />
-                <element signature="e#2614#2982#0#PHP" expanded="false" />
-                <element signature="e#2795#2927#0#PHP" expanded="false" />
-                <element signature="e#2988#3155#0#PHP" expanded="false" />
-                <element signature="e#3160#3383#0#PHP" expanded="false" />
-                <element signature="e#3388#3509#0#PHP" expanded="false" />
-                <element signature="e#3514#3666#0#PHP" expanded="false" />
-                <element signature="e#3995#4037#0#PHP" expanded="false" />
-                <element signature="e#4042#4318#0#PHP" expanded="false" />
-                <element signature="e#4088#4170#0#PHP" expanded="false" />
-                <element signature="e#4367#4619#0#PHP" expanded="false" />
-                <element signature="e#4409#4483#0#PHP" expanded="false" />
-                <element signature="e#4625#4669#0#PHP" expanded="false" />
-                <element signature="e#4674#4962#0#PHP" expanded="false" />
-                <element signature="e#4722#4808#0#PHP" expanded="false" />
-                <element signature="e#5036#5434#0#PHP" expanded="false" />
-                <element signature="e#5586#5677#0#PHP" expanded="false" />
-                <element signature="e#5685#6141#0#PHP" expanded="false" />
-                <element signature="e#6146#6674#0#PHP" expanded="false" />
-                <element signature="e#6679#6981#0#PHP" expanded="false" />
-                <element signature="e#6986#7297#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VertexModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/core/VertexModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="e#129#155#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/BaseTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationsTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/OperationsTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/core/BaseModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-              <folding>
-                <element signature="e#46#72#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +36,7 @@
       <file leaf-file-name="EdgeModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/core/EdgeModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-68">
               <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding>
                 <element signature="e#129#155#0#PHP" expanded="true" />
@@ -160,12 +71,13 @@
         <option value="$PROJECT_DIR$/tests/ConnectionTest.php" />
         <option value="$PROJECT_DIR$/tests/test.php" />
         <option value="$PROJECT_DIR$/src/database/DB.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/models/core/BaseModel.php" />
         <option value="$PROJECT_DIR$/src/models/core/EdgeModel.php" />
-        <option value="$PROJECT_DIR$/tests/OperationsTest.php" />
-        <option value="$PROJECT_DIR$/tests/BaseTest.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/models/core/VertexModel.php" />
+        <option value="$PROJECT_DIR$/tests/BaseTest.php" />
+        <option value="$PROJECT_DIR$/tests/OperationsTest.php" />
+        <option value="$PROJECT_DIR$/tests/ModelsTest.php" />
       </list>
     </option>
   </component>
@@ -197,6 +109,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,6 +133,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arango-orm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arango-orm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -265,7 +196,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,13 +209,13 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Chris Rocco\Desktop\arango-orm\tests" />
-      <recent name="C:\Users\Chris Rocco\Desktop\arango-orm\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Chris Rocco\Desktop\arango-orm\tests\data" />
       <recent name="C:\Users\Chris Rocco\Desktop\arango-orm" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris Rocco\Desktop\arango-orm\tests" />
+      <recent name="C:\Users\Chris Rocco\Desktop\arango-orm\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -358,25 +288,26 @@
       <updated>1496014642659</updated>
       <workItem from="1496014644014" duration="3056000" />
       <workItem from="1496019469176" duration="5029000" />
-      <workItem from="1496026503669" duration="245000" />
+      <workItem from="1496026503669" duration="3497000" />
+      <workItem from="1496032456795" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8330000" />
+    <option name="totallyTimeSpent" value="12239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1835" height="1003" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25521126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25802818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3770115" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22643678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -401,6 +332,91 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/core/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#46#72#0#PHP" expanded="true" />
+            <element signature="e#106#1148#0#PHP" expanded="false" />
+            <element signature="e#1181#1213#0#PHP" expanded="false" />
+            <element signature="e#1251#1336#0#PHP" expanded="false" />
+            <element signature="e#1341#1424#0#PHP" expanded="false" />
+            <element signature="e#1429#1521#0#PHP" expanded="false" />
+            <element signature="e#1526#1607#0#PHP" expanded="false" />
+            <element signature="e#1612#1687#0#PHP" expanded="false" />
+            <element signature="e#1865#2004#0#PHP" expanded="false" />
+            <element signature="e#2009#2194#0#PHP" expanded="false" />
+            <element signature="e#2200#2331#0#PHP" expanded="false" />
+            <element signature="e#2336#2488#0#PHP" expanded="false" />
+            <element signature="e#2494#2551#0#PHP" expanded="false" />
+            <element signature="e#2556#2633#0#PHP" expanded="false" />
+            <element signature="e#2812#2955#0#PHP" expanded="false" />
+            <element signature="e#2960#3133#0#PHP" expanded="false" />
+            <element signature="e#3316#3389#0#PHP" expanded="false" />
+            <element signature="e#3394#3802#0#PHP" expanded="false" />
+            <element signature="e#3449#3525#0#PHP" expanded="false" />
+            <element signature="e#3808#3996#0#PHP" expanded="false" />
+            <element signature="e#4001#4325#0#PHP" expanded="false" />
+            <element signature="e#4147#4293#0#PHP" expanded="false" />
+            <element signature="e#4331#4417#0#PHP" expanded="false" />
+            <element signature="e#4423#4532#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/OperationsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ModelsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BaseTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/core/VertexModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#129#155#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/core/EdgeModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#129#155#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -423,6 +439,29 @@
           <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
             <element signature="e#46#72#0#PHP" expanded="true" />
+            <element signature="e#106#1148#0#PHP" expanded="false" />
+            <element signature="e#1181#1213#0#PHP" expanded="false" />
+            <element signature="e#1251#1336#0#PHP" expanded="false" />
+            <element signature="e#1341#1424#0#PHP" expanded="false" />
+            <element signature="e#1429#1521#0#PHP" expanded="false" />
+            <element signature="e#1526#1607#0#PHP" expanded="false" />
+            <element signature="e#1612#1687#0#PHP" expanded="false" />
+            <element signature="e#1865#2004#0#PHP" expanded="false" />
+            <element signature="e#2009#2194#0#PHP" expanded="false" />
+            <element signature="e#2200#2331#0#PHP" expanded="false" />
+            <element signature="e#2336#2488#0#PHP" expanded="false" />
+            <element signature="e#2494#2551#0#PHP" expanded="false" />
+            <element signature="e#2556#2633#0#PHP" expanded="false" />
+            <element signature="e#2812#2955#0#PHP" expanded="false" />
+            <element signature="e#2960#3133#0#PHP" expanded="false" />
+            <element signature="e#3316#3389#0#PHP" expanded="false" />
+            <element signature="e#3394#3802#0#PHP" expanded="false" />
+            <element signature="e#3449#3525#0#PHP" expanded="false" />
+            <element signature="e#3808#3996#0#PHP" expanded="false" />
+            <element signature="e#4001#4325#0#PHP" expanded="false" />
+            <element signature="e#4147#4293#0#PHP" expanded="false" />
+            <element signature="e#4331#4417#0#PHP" expanded="false" />
+            <element signature="e#4423#4532#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -493,6 +532,29 @@
           <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
           <folding>
             <element signature="e#46#72#0#PHP" expanded="true" />
+            <element signature="e#106#1148#0#PHP" expanded="false" />
+            <element signature="e#1181#1213#0#PHP" expanded="false" />
+            <element signature="e#1251#1336#0#PHP" expanded="false" />
+            <element signature="e#1341#1424#0#PHP" expanded="false" />
+            <element signature="e#1429#1521#0#PHP" expanded="false" />
+            <element signature="e#1526#1607#0#PHP" expanded="false" />
+            <element signature="e#1612#1687#0#PHP" expanded="false" />
+            <element signature="e#1865#2004#0#PHP" expanded="false" />
+            <element signature="e#2009#2194#0#PHP" expanded="false" />
+            <element signature="e#2200#2331#0#PHP" expanded="false" />
+            <element signature="e#2336#2488#0#PHP" expanded="false" />
+            <element signature="e#2494#2551#0#PHP" expanded="false" />
+            <element signature="e#2556#2633#0#PHP" expanded="false" />
+            <element signature="e#2812#2955#0#PHP" expanded="false" />
+            <element signature="e#2960#3133#0#PHP" expanded="false" />
+            <element signature="e#3316#3389#0#PHP" expanded="false" />
+            <element signature="e#3394#3802#0#PHP" expanded="false" />
+            <element signature="e#3449#3525#0#PHP" expanded="false" />
+            <element signature="e#3808#3996#0#PHP" expanded="false" />
+            <element signature="e#4001#4325#0#PHP" expanded="false" />
+            <element signature="e#4147#4293#0#PHP" expanded="false" />
+            <element signature="e#4331#4417#0#PHP" expanded="false" />
+            <element signature="e#4423#4532#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,6 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -550,54 +613,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test.php" />
-    <entry file="file://$PROJECT_DIR$/src/models/core/EdgeModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#129#155#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/OperationsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BaseTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="22" selection-end-column="52" />
+        <state relative-caret-position="391">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/core/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <element signature="e#46#72#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="85">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="e#119#161#0#PHP" expanded="true" />
             <element signature="e#377#1177#0#PHP" expanded="false" />
@@ -637,11 +664,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/core/VertexModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="e#129#155#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BaseTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/OperationsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/core/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#46#72#0#PHP" expanded="true" />
+            <element signature="e#106#1148#0#PHP" expanded="false" />
+            <element signature="e#1181#1213#0#PHP" expanded="false" />
+            <element signature="e#1251#1336#0#PHP" expanded="false" />
+            <element signature="e#1341#1424#0#PHP" expanded="false" />
+            <element signature="e#1429#1521#0#PHP" expanded="false" />
+            <element signature="e#1526#1607#0#PHP" expanded="false" />
+            <element signature="e#1612#1687#0#PHP" expanded="false" />
+            <element signature="e#1865#2004#0#PHP" expanded="false" />
+            <element signature="e#2009#2194#0#PHP" expanded="false" />
+            <element signature="e#2200#2331#0#PHP" expanded="false" />
+            <element signature="e#2336#2488#0#PHP" expanded="false" />
+            <element signature="e#2494#2551#0#PHP" expanded="false" />
+            <element signature="e#2556#2633#0#PHP" expanded="false" />
+            <element signature="e#2812#2955#0#PHP" expanded="false" />
+            <element signature="e#2960#3133#0#PHP" expanded="false" />
+            <element signature="e#3316#3389#0#PHP" expanded="false" />
+            <element signature="e#3394#3802#0#PHP" expanded="false" />
+            <element signature="e#3449#3525#0#PHP" expanded="false" />
+            <element signature="e#3808#3996#0#PHP" expanded="false" />
+            <element signature="e#4001#4325#0#PHP" expanded="false" />
+            <element signature="e#4147#4293#0#PHP" expanded="false" />
+            <element signature="e#4331#4417#0#PHP" expanded="false" />
+            <element signature="e#4423#4532#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/core/EdgeModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="e#129#155#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ModelsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="45" column="10" lean-forward="true" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
