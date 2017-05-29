@@ -1,5 +1,5 @@
 # ArangoDB O.R.M. for PHP
-=========================
+--------------------------
 
 This adapter eliminates the redundancy and complexity of many database interactions.
 
@@ -15,7 +15,7 @@ Features
 * Powerful core model classes, easy to inherit and extend
 
 ## Table of Contents
-====================
+---------------------
 1. Getting Setup
 2. Extending the Model Classes
 3. Defining a Collection Schema
@@ -38,7 +38,7 @@ You may optionally define a loose collection schema for easy initialization. Jus
  
 ### Defining a Document Schema
 Similarly to defining a collection schema, you may optionally define some default documents by building the schema object in PHP and passing it to
-<code>DB::populateCollections</code>
+<code>DB::populateCollections( $schema )</code>
 
 ### Common Scaling Patterns
 There are two classic project patterns you would likely follow. 
