@@ -18,8 +18,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="47" lean-forward="true" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+            <state relative-caret-position="187">
+              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -66,7 +66,6 @@
         <option value="$PROJECT_DIR$/src/database_settings.php" />
         <option value="$PROJECT_DIR$/src/scripts/db-init.php" />
         <option value="$PROJECT_DIR$/tests/YourClassTest.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/tests/data/database_settings.php" />
         <option value="$PROJECT_DIR$/src/database/DB.php" />
         <option value="$PROJECT_DIR$/tests/ConnectionTest.php" />
@@ -75,6 +74,7 @@
         <option value="$PROJECT_DIR$/src/models/core/VertexModel.php" />
         <option value="$PROJECT_DIR$/src/models/core/EdgeModel.php" />
         <option value="$PROJECT_DIR$/tests/test.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -262,15 +262,15 @@
       <option name="presentableId" value="Default" />
       <updated>1496014642659</updated>
       <workItem from="1496014644014" duration="3056000" />
-      <workItem from="1496019469176" duration="4392000" />
+      <workItem from="1496019469176" duration="4635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7448000" />
+    <option name="totallyTimeSpent" value="7691000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1835" height="1003" extended-state="1" />
+    <frame x="-8" y="0" width="1835" height="1003" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25239438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -545,8 +545,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="47" lean-forward="true" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>

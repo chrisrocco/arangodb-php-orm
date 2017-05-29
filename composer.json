@@ -1,6 +1,6 @@
 {
-    "name": "buonzz/composer-library-template",
-    "description": "Boilerplate package for creating other packages.",
+    "name": "rocco/arango-orm",
+    "description": "Object relationship mapping utility for ArangoDB.",
     "keywords": ["template", "composer", "package"],
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "email": "chris.rocco7@gmail.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
         "triagens/arangodb": "^3.1",
 		"php": ">=5.4"
