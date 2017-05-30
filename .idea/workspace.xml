@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce2af879-3c07-424a-8da4-d19db59bd6d7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/MockDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/DB.php" afterPath="$PROJECT_DIR$/src/database/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/OperationsTest.php" afterPath="$PROJECT_DIR$/tests/OperationsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/MockDB.php" afterPath="$PROJECT_DIR$/src/database/MockDB.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OperationsTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OperationsTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/OperationsTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
@@ -115,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MockDB.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MockDB.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/database/MockDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -169,9 +166,9 @@
         <option value="$PROJECT_DIR$/tests/BaseTest.php" />
         <option value="$PROJECT_DIR$/tests/ModelsTest.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/database/MockDB.php" />
         <option value="$PROJECT_DIR$/src/database/DB.php" />
         <option value="$PROJECT_DIR$/tests/OperationsTest.php" />
+        <option value="$PROJECT_DIR$/src/database/MockDB.php" />
       </list>
     </option>
   </component>
@@ -379,12 +376,12 @@
       <workItem from="1496032456795" duration="688000" />
       <workItem from="1496075293602" duration="1916000" />
       <workItem from="1496079666263" duration="1201000" />
-      <workItem from="1496113493261" duration="475000" />
+      <workItem from="1496113493261" duration="510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15862000" />
+    <option name="totallyTimeSpent" value="15897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1835" height="1003" extended-state="0" />
@@ -882,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/MockDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/data/document_schema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -950,6 +939,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/MockDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding />
         </state>
       </provider>

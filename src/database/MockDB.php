@@ -10,7 +10,7 @@ namespace rocco\ArangoORM\DB;
 
 class MockDB
 {
-    function generateMockData( $templates, $values, $how_many ){
+    static function generateMockData( $templates, $values, $how_many ){
         $output = [];
         for( $i = 0; $i < $how_many; $i++ ){
             $rand_key_t = array_rand( $templates, 1 );
