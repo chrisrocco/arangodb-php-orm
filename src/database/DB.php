@@ -177,7 +177,7 @@ class DB
         }
 
         if( !isset( self::$connection_settings )){
-            throw new \Exception( "Must connect to database first" );
+            throw new \Exception( "No database connection specified!" );
         }
 
         $connection = new Connection( self::$connection_settings );
@@ -209,6 +209,18 @@ class DB
             print "created $type collection: $name \n";
         }
     }
+
+    /**
+     * @param $document_schema mixed
+     *
+     * [
+     *      "collection_name" => [
+     *          [
+     *              // document here
+     *          ]
+     *      ]
+     * ]
+     */
     static function createDocuments( $document_schema ){
         $dh = self::getDocumentHandler();
 

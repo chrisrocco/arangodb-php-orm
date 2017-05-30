@@ -20,7 +20,7 @@ class OperationsTest extends BaseTest {
   */
   public function testInit(){
       $collection_schema = json_decode( file_get_contents(__DIR__ . '/data/collection_schema.json'), true );
-      DB::initCollections( $collection_schema );
+      DB::buildFromSchema( $collection_schema );
       $ch = DB::getCollectionHandler();
 
       $result = true;
@@ -32,7 +32,7 @@ class OperationsTest extends BaseTest {
 
   public function testPopulate(){
       $document_schema = json_decode( file_get_contents(__DIR__ . '/data/document_schema.json'), true );
-      DB::populateCollections( $document_schema );
+      DB::createDocuments( $document_schema );
 
       // for each collection
       // get the number of defined documents
@@ -51,11 +51,11 @@ class OperationsTest extends BaseTest {
   }
 
   public function testTruncate(){
-      DB::truncateCollections();
+      DB::truncate();
   }
 
   public function testNuke(){
-      DB::dropCollections();
+      DB::nuke();
       $ch = DB::getCollectionHandler();
       $collections = $ch->getAllCollections([ 'excludeSystem' => true ]);
       self::assertEquals( 0, count($collections) );
