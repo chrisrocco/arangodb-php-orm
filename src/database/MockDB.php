@@ -8,6 +8,8 @@
 
 namespace rocco\ArangoORM\DB;
 
+use triagens\ArangoDb\Exception;
+
 class MockDB
 {
     static function generateMockData( $templates, $values, $how_many ){
@@ -48,9 +50,9 @@ class MockDB
         $from = DB::getAll( $collection_from )->getAll();
         $to = DB::getAll( $collection_to )->getAll();
 
+        $eh = DB::getEdgeHandler();
         foreach ( $from as $index => $doc ){
             if( $index <= count( $to ) ){
-                $eh = DB::getEdgeHandler();
                 $eh->saveEdge( $edge_collection, $doc->getInternalId(), $to[$index]->getInternalId(), [], [
                     'createCollection'  =>  true
                 ]);
@@ -59,9 +61,29 @@ class MockDB
     }
 
     // garuntees at least one edge from $collection_from
-    static function oneToMany( $collection_from, $collection_to, $edge_direction ){
+    static function oneToMany( $collection_one, $collection_toMany, $edge_collection, $edge_direction ){
+        $max_edges = 5;
+        $one = DB::getAll( $collection_one )->getAll();
+        $toMany = DB::getAll( $collection_toMany )->getAll();
         // for each in collection_from
         // make {random} edges to random documents in collection_to
+        $eh = DB::getEdgeHandler();
+        foreach ( $toMany as $doc ){
+            $randomOther = $one[rand(0, count($one)-1)];
+            if( $edge_direction == "outbound" ){
+                $eh->saveEdge( $edge_collection, $doc->getInternalId(), $randomOther->getInternalId(), [], [
+                    'createCollection'  =>  true
+                ]);
+                continue;
+            }
+            if( $edge_direction == "inbound" ){
+                $eh->saveEdge( $edge_collection, $randomOther->getInternalId(), $doc->getInternalId(), [], [
+                    'createCollection'  =>  true
+                ]);
+                continue;
+            }
+            throw new Exception( "Invalid direction parameter. Must be either 'inbound' or 'outbound' ");
+        }
     }
 
     // does not garuntee every vertex will have an edge
