@@ -67,4 +67,25 @@ class MockDBTest extends BaseTest
         self::assertEquals( $how_many, count($generated) );
     }
 
+    function testOneToOne(){
+        $dh = DB::getDocumentHandler();
+        $ch = DB::getCollectionHandler();
+        if(!$ch->has("users")) $ch->create( "users" );
+        if(!$ch->has("markets")) $ch->create( "markets" );
+        for ( $i = 0; $i < 100; $i++ ){
+            $user = \triagens\ArangoDb\Document::createFromArray( [] );
+            $market = \triagens\ArangoDb\Document::createFromArray( [] );
+            $dh->store( $user, "users" );
+            $dh->store( $market, "markets" );
+        }
+        MockDB::oneToOne( "users", "markets", "in_market" );
+
+        $usersCount = DB::getAll( "users" )->getCount();
+        $marketsCount = DB::getAll( "markets" )->getCount();
+        $min = $usersCount;
+        if( $marketsCount < $usersCount ) $min = $marketsCount;
+
+        self::assertEquals( DB::getAll("in_market")->getCount(), $min );
+    }
+
 }
