@@ -22,4 +22,23 @@ class MockDB
         }
         return $output;
     }
+
+    static function mockDocuments( $document_template, $bind_templates, $how_many ){
+        $mockData = [];
+        foreach ( $bind_templates as $bind_char => $template ){
+            $mockData[$bind_char] = self::generateMockData( $template['templates'], $template['values'], $how_many );
+        }
+
+        $output = [];
+        for( $i = 0; $i < $how_many; $i++ ){
+
+            $tmp = json_encode( $document_template );
+            foreach ( $mockData as $bind_char => $values ){
+                $tmp = str_replace( $bind_char, $values[$i], $tmp );
+            }
+
+            $output[] = json_decode( $tmp, true );
+        }
+        return $output;
+    }
 }

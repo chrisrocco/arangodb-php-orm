@@ -40,4 +40,31 @@ class MockDBTest extends BaseTest
         self::assertEquals( $how_many, count($generated) );
     }
 
+    function testMockDocuments(){
+        $user_template = [
+            "name"  =>  "@name",
+            "email" =>  "@email"
+        ];
+
+        $name_templates = [ "Chris %s", "John %s", "Tim %s", "Caleb %s" ];
+        $name_values = [ "Carter", "Rayy", "Bird", "Johnstone" ];
+
+        $email_templates = [ "%s@gmail.com", "%s@aol.com", "%s@yahoo.com" ];
+        $email_values = [ "chris", "caleb", "tim", "john" ];
+
+        $how_many = 50;
+        $generated = MockDB::mockDocuments( $user_template, [
+            "@name" => [
+                "templates" =>  $name_templates,
+                "values"    =>  $name_values
+            ],
+            "@email" => [
+                "templates" => $email_templates,
+                "values" => $email_values
+            ]
+        ], $how_many );
+
+        self::assertEquals( $how_many, count($generated) );
+    }
+
 }
