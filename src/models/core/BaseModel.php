@@ -109,6 +109,12 @@ abstract class BaseModel {
 
         return self::wrapAll( $cursor );
     }
+    public static function search( $search_term ){
+        // TODO: Find out how to do this in AQL
+        $AQL = "";
+        $bindings = [];
+        return DB::queryModel( $AQL, $bindings, static::getClass() );
+    }
 
     /*--------------------------------------------------*/
     /*--------------------- Helper ---------------------*/

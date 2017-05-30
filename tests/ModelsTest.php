@@ -1,5 +1,6 @@
 <?php
 use rocco\ArangoORM\DB\DB;
+use triagens\ArangoDb\Document;
 
 /**
 *  Corresponding Class to test YourClass class
@@ -50,6 +51,28 @@ class ModelsTest extends BaseTest {
         self::assertInstanceOf( TestEdgeModel::class, $edge );
     }
 
+    function testSearch(){
+        // TODO: Make sure this passes after the search method is ready
+        $a = Document::createFromArray( [ "propertyOne" => "A B C D"]);
+        $b = Document::createFromArray( [ "propertyOne" => "A B E F G"]);
+        $c = Document::createFromArray( [ "propertyOne" => "A C D E J K"]);
+
+        $ch = DB::getCollectionHandler();
+        $ch->create( "search_test" );
+        $dh = DB::getDocumentHandler();
+        $dh->save( "search_test", $a );
+        $dh->save( "search_test", $b );
+        $dh->save( "search_test", $c );
+
+        $has_B = SearchTestModel::search( "B" );
+        $has_F = SearchTestModel::search( "F" );
+        $has_A = SearchTestModel::search( "A" );
+
+        self::assertEquals( 2, count($has_B) );
+        self::assertEquals( 1, count($has_F) );
+        self::assertEquals( 3, count($has_A) );
+    }
+
 }
 
 class TestVertexModel extends \rocco\ArangoORM\Models\Core\VertexModel {
@@ -57,4 +80,8 @@ class TestVertexModel extends \rocco\ArangoORM\Models\Core\VertexModel {
 }
 class TestEdgeModel extends \rocco\ArangoORM\Models\Core\EdgeModel {
     static $collection = "im_an_edge_collection";
+}
+
+class SearchTestModel extends \rocco\ArangoORM\Models\Core\VertexModel {
+    static $collection = "search_test";
 }

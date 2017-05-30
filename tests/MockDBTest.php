@@ -65,6 +65,8 @@ class MockDBTest extends BaseTest
         ], $how_many );
 
         self::assertEquals( $how_many, count($generated) );
+
+        return $generated;
     }
 
     function testOneToOne(){
