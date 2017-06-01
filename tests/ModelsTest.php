@@ -51,14 +51,16 @@ class ModelsTest extends BaseTest {
         self::assertInstanceOf( TestEdgeModel::class, $edge );
     }
 
+    /**
+     * @ignore
+     */
     function testSearch(){
         // TODO: Make sure this passes after the search method is ready
         $a = Document::createFromArray( [ "propertyOne" => "A B C D"]);
         $b = Document::createFromArray( [ "propertyOne" => "A B E F G"]);
         $c = Document::createFromArray( [ "propertyOne" => "A C D E J K"]);
 
-        $ch = DB::getCollectionHandler();
-        $ch->create( "search_test" );
+        DB::createCollectionIfNotExsists( "search_test" );
         $dh = DB::getDocumentHandler();
         $dh->save( "search_test", $a );
         $dh->save( "search_test", $b );

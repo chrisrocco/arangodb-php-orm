@@ -97,8 +97,8 @@ class MockDBTest extends BaseTest
     function testOneToMany(){
         $dh = DB::getDocumentHandler();
         $ch = DB::getCollectionHandler();
-        if(!$ch->has("one")) $ch->create( "one" );
-        if(!$ch->has("toMany")) $ch->create( "toMany" );
+        DB::createCollectionIfNotExsists( "one" );
+        DB::createCollectionIfNotExsists( "toMany" );
         for ( $i = 0; $i < 100; $i++ ){
             $user = \triagens\ArangoDb\Document::createFromArray( [] );
             $market = \triagens\ArangoDb\Document::createFromArray( [] );

@@ -208,6 +208,16 @@ class DB
         }
     }
 
+    static function createCollectionIfNotExsists( $collection_name ){
+        $ch = self::getCollectionHandler();
+        if(!$ch->has( $collection_name )) $ch->create( $collection_name );
+    }
+    static function dropCollection( $collection_name ){
+        $ch = self::getCollectionHandler();
+        if($ch->has( $collection_name )) $ch->drop( $collection_name );
+    }
+
+
     /**
      * @param $document_schema mixed
      *
