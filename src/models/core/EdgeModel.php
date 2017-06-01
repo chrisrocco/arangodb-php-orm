@@ -6,9 +6,9 @@
  * Time: 11:54 PM
  */
 
-namespace rocco\ArangoORM\Models\Core;
+namespace vector\ArangoORM\Models\Core;
 
-use rocco\ArangoORM\DB\DB;
+use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Edge;
 
 /**

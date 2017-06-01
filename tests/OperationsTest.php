@@ -1,5 +1,5 @@
 <?php
-use rocco\ArangoORM\DB\DB;
+use vector\ArangoORM\DB\DB;
 
 /**
 *  Corresponding Class to test YourClass class

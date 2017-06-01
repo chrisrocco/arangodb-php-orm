@@ -1,5 +1,5 @@
 <?php
-use rocco\ArangoORM\DB\DB;
+use vector\ArangoORM\DB\DB;
 
 
 class BaseTest extends PHPUnit_Framework_TestCase

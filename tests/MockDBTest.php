@@ -1,6 +1,6 @@
 <?php
-use rocco\ArangoORM\DB\DB;
-use rocco\ArangoORM\DB\MockDB;
+use vector\ArangoORM\DB\DB;
+use vector\ArangoORM\DB\MockDB;
 
 /**
  *  Corresponding Class to test YourClass class

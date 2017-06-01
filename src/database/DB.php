@@ -6,9 +6,9 @@
  * Time: 1:39 PM
  */
 
-namespace rocco\ArangoORM\DB;
+namespace vector\ArangoORM\DB;
 
-use rocco\ArangoORM\Models\Core\BaseModel;
+use vector\ArangoORM\Models\Core\BaseModel;
 use triagens\ArangoDb\CollectionHandler;
 use triagens\ArangoDb\Connection;
 use triagens\ArangoDb\Document;

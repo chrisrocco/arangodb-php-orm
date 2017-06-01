@@ -1,7 +1,7 @@
 <?php
 
-namespace rocco\ArangoORM\Models\Core;
-use rocco\ArangoORM\DB\DB;
+namespace vector\ArangoORM\Models\Core;
+use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Document;
 
 /**
