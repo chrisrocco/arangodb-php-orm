@@ -194,8 +194,6 @@ class DB
         self::$connection_settings = $settings;
     }
 
-
-
     static function buildFromSchema( $collection_schema ){
         $ch = self::getCollectionHandler();
         foreach ($collection_schema as $name => $type){
