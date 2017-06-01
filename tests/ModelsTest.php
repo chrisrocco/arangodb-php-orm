@@ -1,5 +1,5 @@
 <?php
-use rocco\ArangoORM\DB\DB;
+use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Document;
 
 /**
@@ -75,13 +75,13 @@ class ModelsTest extends BaseTest {
 
 }
 
-class TestVertexModel extends \rocco\ArangoORM\Models\Core\VertexModel {
+class TestVertexModel extends \vector\ArangoORM\Models\Core\VertexModel {
     static $collection = "im_a_vertex_collection";
 }
-class TestEdgeModel extends \rocco\ArangoORM\Models\Core\EdgeModel {
+class TestEdgeModel extends \vector\ArangoORM\Models\Core\EdgeModel {
     static $collection = "im_an_edge_collection";
 }
 
-class SearchTestModel extends \rocco\ArangoORM\Models\Core\VertexModel {
+class SearchTestModel extends \vector\ArangoORM\Models\Core\VertexModel {
     static $collection = "search_test";
 }

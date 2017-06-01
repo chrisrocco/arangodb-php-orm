@@ -6,7 +6,7 @@
  * Time: 1:39 PM
  */
 
-namespace rocco\ArangoORM\DB;
+namespace vector\ArangoORM\DB;
 
 use triagens\ArangoDb\Exception;
 
