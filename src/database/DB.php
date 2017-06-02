@@ -235,7 +235,6 @@ class DB
                     case self::HASH :
                         $unique = null;
                         $sparse = null;
-                        var_dump($index['options']['sparse']);
                         if (isset($index['options']['unique'])) {
                             $unique = json_decode($index['options']['unique']);
                         }
