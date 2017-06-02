@@ -202,15 +202,33 @@ class DB
 
     static function buildFromSchema( $collection_schema ){
         $ch = self::getCollectionHandler();
-        foreach ($collection_schema as $name => $type){
+        foreach ($collection_schema as $name => $details){
             if($ch->has($name)) continue;
 
+            $type = $details['type'];
             $type_code = 0;
             if($type === 'edge') $type_code = 3;
             if($type === 'vertex') $type_code = 2;
 
             $ch->create($name, [ 'type' => $type_code ]);
             print "created $type collection: $name \n";
+
+            if( !isset( $details['indexes'])) continue;
+            $indexes = $details['indexes'];
+            foreach ( $indexes as $property_name => $index_type ){
+                if( $index_type == self::GEO ){
+                    $ch->createGeoIndex( $name, [ $property_name ], true );
+                }
+                if( $index_type == self::HASH ){
+                    $ch->createHashIndex( $name, [ $property_name ] );
+                }
+                if( $index_type == self::SKIP_LIST ){
+                    $ch->createSkipListIndex( $name, [ $property_name ] );
+                }
+                if( $index_type == self::FULL_TEXT ){
+                    $ch->createFulltextIndex( $name, [ $property_name ] );
+                }
+            }
         }
     }
 
@@ -267,4 +285,9 @@ class DB
             $ch->truncate( $name );
         }
     }
+
+    const GEO = "geo";
+    const SKIP_LIST = "skipList";
+    const FULL_TEXT = "fullText";
+    const HASH = "hash";
 }

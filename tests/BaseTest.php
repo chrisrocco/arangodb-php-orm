@@ -18,7 +18,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
         DB::connect($connection_settings);
 
         $ch = DB::getCollectionHandler();
-        if (!$ch->has("users")) $ch->create("users");
+        DB::createCollectionIfNotExsists( "users" );
 
         $cursor = DB::getAll("users");
         self::assertNotEquals(null, $cursor);

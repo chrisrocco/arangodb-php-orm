@@ -54,11 +54,14 @@ class OperationsTest extends BaseTest {
       DB::truncate();
   }
 
-  public function testNuke(){
-      DB::nuke();
-      $ch = DB::getCollectionHandler();
-      $collections = $ch->getAllCollections([ 'excludeSystem' => true ]);
-      self::assertEquals( 0, count($collections) );
-  }
+    /**
+     * @group ignore
+     */
+//  public function testNuke(){
+//      DB::nuke();
+//      $ch = DB::getCollectionHandler();
+//      $collections = $ch->getAllCollections([ 'excludeSystem' => true ]);
+//      self::assertEquals( 0, count($collections) );
+//  }
 
 }

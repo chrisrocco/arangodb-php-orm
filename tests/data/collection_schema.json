@@ -1,15 +1,54 @@
 {
-  "users":          "vertex",
-  "markets":        "vertex",
-  "events":         "vertex",
-  "caroler_types":  "vertex",
-  "roles":          "vertex",
-
-  "is_type":        "edge",
-  "is_role":        "edge",
-  "directs":        "edge",
-  "hosting":        "edge",
-  "needs_a":        "edge",
-  "performing_at":  "edge",
-  "in_market":      "edge"
+  "users": {
+    "type": "vertex",
+    "indexes": [
+      {
+        "email": "hash"
+      }
+    ]
+  },
+  "markets": {
+    "type": "vertex",
+    "indexes": {
+      "location": "geo"
+    }
+  },
+  "events": {
+    "type": "vertex"
+  },
+  "caroler_types": {
+    "type": "vertex"
+  },
+  "roles": {
+    "type": "vertex",
+    "indexes": []
+  },
+  "is_type": {
+    "type": "edge",
+    "indexes": []
+  },
+  "is_role": {
+    "type": "edge",
+    "indexes": []
+  },
+  "directs": {
+    "type": "edge",
+    "indexes": []
+  },
+  "hosting": {
+    "type": "edge",
+    "indexes": []
+  },
+  "needs_a": {
+    "type": "edge",
+    "indexes": []
+  },
+  "performing_at": {
+    "type": "edge",
+    "indexes": []
+  },
+  "in_market": {
+    "type": "edge",
+    "indexes": []
+  }
 }
