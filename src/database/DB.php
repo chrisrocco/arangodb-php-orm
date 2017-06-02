@@ -96,6 +96,9 @@ class DB
         );
         return $statement->execute();
     }
+    public static function queryFirst($query_string, $bindVars = [], $flat = true){
+        return self::query( $query_string, $bindVars, $flat )->getAll()[0];
+    }
 
     /**
      * @param $query_string
@@ -107,6 +110,9 @@ class DB
         $cursor = self::query($query_string, $bindVars, false);
         $model = new $modelClass;
         return $model::wrapAll($cursor);
+    }
+    public static function queryFirstModel($query_string, $bindVars = [], $modelClass){
+        return self::queryModel( $query_string, $bindVars, $modelClass )[0];
     }
     public static function getAll( $col ){
         $ch = self::getCollectionHandler();
