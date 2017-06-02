@@ -180,6 +180,13 @@ abstract class BaseModel {
     }
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
+    /**
+     * @var array
+     *
+     * [
+     *      "property_name" => "class_name"
+     * ]
+     */
     static $schema;
 
     static function forceSchema( $data ){

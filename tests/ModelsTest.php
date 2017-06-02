@@ -39,7 +39,7 @@ class ModelsTest extends BaseTest {
         $vertexTwo = TestVertexModel::create( [
             "name"  =>  "Vertex Two"
         ] );
-        $edge = TestEdgeModel::create(
+        $edge = TestEdgeModel::createEdge(
             $vertexOne, $vertexTwo,
             [
                 "name"  =>  "optional"

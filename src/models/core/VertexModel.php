@@ -8,6 +8,9 @@
 
 namespace vector\ArangoORM\Models\Core;
 
+use phpDocumentor\Reflection\Types\Array_;
+use phpDocumentor\Reflection\Types\Integer;
+use phpDocumentor\Reflection\Types\String_;
 use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Document;
 
@@ -16,5 +19,5 @@ use triagens\ArangoDb\Document;
  * @package Models\Core
  */
 class VertexModel extends BaseModel {
-
+    
 }
