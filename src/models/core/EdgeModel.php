@@ -28,7 +28,7 @@ class EdgeModel extends BaseModel
      * @param $data     array   PHP array of object attributes
      * @return mixed
      */
-    public static function create( $to, $from, $data = []) {
+    public static function createEdge( $to, $from, $data = []) {
         self::addMetaData( $data );
 
         $edge_doc = Edge::createFromArray( $data );

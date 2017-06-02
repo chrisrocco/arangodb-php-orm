@@ -1,6 +1,8 @@
 <?php
 
 namespace vector\ArangoORM\Models\Core;
+use phpDocumentor\Reflection\Types\Integer;
+use triagens\ArangoDb\Exception;
 use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Document;
 
@@ -64,6 +66,22 @@ abstract class BaseModel {
     /*------------------------------------------------*/
     /*--------------------- CRUD ---------------------*/
     /*------------------------------------------------*/
+
+    /**
+     * Creates a new document in the database, wraps it into a model, and returns the model
+     * @param $data array properties
+     * @return mixed
+     */
+    static function create( $data )
+    {
+        self::forceSchema( $data );
+        self::addMetaData( $data );
+
+        $document = Document::createFromArray( $data );
+        $key = DB::create( static::getCollectionName(), $document );
+        $document->setInternalKey($key);
+        return static::wrap($document);
+    }
 
     /**
      * Fetches a document from the database, wraps it in a model, and returns it.
@@ -162,5 +180,15 @@ abstract class BaseModel {
     }
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
+    static $schema;
 
+    static function forceSchema( $data ){
+        if( !isset( static::$schema ) ) return;
+
+        foreach ( $data as $key => $value ){
+            if( !isset($schema[$key]) ) Throw new Exception( "Schema Error: property '$key' not allowed" );
+            $typeSafe = is_a( $value, $schema[$key] );
+            if( !$typeSafe ) Throw new Exception( "Schema Error: property '$key' is not of type " . $schema[$key] );
+        }
+    }
 }

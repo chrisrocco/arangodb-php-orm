@@ -17,19 +17,4 @@ use triagens\ArangoDb\Document;
  */
 class VertexModel extends BaseModel {
 
-    /**
-     * Creates a new record in the database, wraps it in a model, and returns it.
-     * @param $data array
-     * @return VertexModel
-     */
-    public static function create( $data ){
-
-        self::addMetaData( $data );
-
-        $document = Document::createFromArray( $data );
-        $key = DB::create( static::getCollectionName(), $document );
-        $document->setInternalKey($key);
-        return static::wrap($document);
-    }
-
 }
