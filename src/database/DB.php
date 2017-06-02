@@ -215,18 +215,55 @@ class DB
 
             if( !isset( $details['indexes'])) continue;
             $indexes = $details['indexes'];
-            foreach ( $indexes as $property_name => $index_type ){
-                if( $index_type == self::GEO ){
-                    $ch->createGeoIndex( $name, [ $property_name ], true );
-                }
-                if( $index_type == self::HASH ){
-                    $ch->createHashIndex( $name, [ $property_name ] );
-                }
-                if( $index_type == self::SKIP_LIST ){
-                    $ch->createSkipListIndex( $name, [ $property_name ] );
-                }
-                if( $index_type == self::FULL_TEXT ){
-                    $ch->createFulltextIndex( $name, [ $property_name ] );
+            foreach ($indexes as $index) {
+                switch ($index['type']) {
+                    case self::GEO :
+                        $geoJson = null;
+                        $constraint = null;
+                        $ignoreNull = null;
+                        if (isset($index['options']['geoJson'])) {
+                            $geoJson = json_decode($index['options']['geoJson']);
+                        }
+                        if (isset($index['options']['constraint'])) {
+                            $constraint = json_decode($index['options']['constraint']);
+                        }
+                        if (isset($index['options']['ignoreNull'])) {
+                            $ignoreNull = json_decode($index['options']['ignoreNull']);
+                        }
+                        $ch->createGeoIndex( $name, $index['fields'], $geoJson, $constraint, $ignoreNull );
+                        break;
+                    case self::HASH :
+                        $unique = null;
+                        $sparse = null;
+                        var_dump($index['options']['sparse']);
+                        if (isset($index['options']['unique'])) {
+                            $unique = json_decode($index['options']['unique']);
+                        }
+                        if (isset($index['options']['sparse'])) {
+                            $sparse = json_decode($index['options']['sparse']);
+                        }
+                        $ch->createHashIndex( $name, $index['fields'], $unique, $sparse);
+                        break;
+                    case self::SKIP_LIST :
+                        $unique = null;
+                        $sparse = null;
+                        if (isset($index['options']['unique'])) {
+                            $unique = json_decode($index['options']['unique']);
+                        }
+                        if (isset($index['options']['sparse'])) {
+                            $sparse = json_decode($index['options']['sparse']);
+                        }
+                        $ch->createSkipListIndex( $name, $index['fields'], $unique, $sparse);
+                        break;
+                    case self::FULL_TEXT :
+                        $minLength = null;
+                        if (isset($index['options']['minLength'])) {
+                            $minLength = json_decode($index['options']['minLength']);
+                        }
+                        $ch->createFullTextIndex( $name, $index['fields'], $minLength);
+                        break;
+                    default :
+                        break;
                 }
             }
         }

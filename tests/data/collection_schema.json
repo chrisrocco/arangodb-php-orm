@@ -1,17 +1,30 @@
 {
   "users": {
     "type": "vertex",
-    "indexes": [
+    "indexes":[
       {
-        "email": "hash"
+        "type" : "hash",
+        "fields" : [
+          "email"
+        ],
+        "options" : {
+          "unique" : "true",
+          "sparse" : "false"
+        }
       }
     ]
   },
   "markets": {
     "type": "vertex",
-    "indexes": {
-      "location": "geo"
-    }
+    "indexes": [
+      {
+        "type": "geo",
+        "fields" : [
+          "latitude",
+          "longitude"
+        ]
+      }
+    ]
   },
   "events": {
     "type": "vertex"
@@ -20,35 +33,27 @@
     "type": "vertex"
   },
   "roles": {
-    "type": "vertex",
-    "indexes": []
+    "type": "vertex"
   },
   "is_type": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "is_role": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "directs": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "hosting": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "needs_a": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "performing_at": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   },
   "in_market": {
-    "type": "edge",
-    "indexes": []
+    "type": "edge"
   }
 }
