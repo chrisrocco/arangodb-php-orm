@@ -72,26 +72,27 @@ class MockDBTest extends BaseTest
     function testOneToOne(){
         $dh = DB::getDocumentHandler();
         $ch = DB::getCollectionHandler();
-        if(!$ch->has("users")) $ch->create( "users" );
-        if(!$ch->has("markets")) $ch->create( "markets" );
+        if(!$ch->has("a")) $ch->create( "a" );
+        if(!$ch->has("b")) $ch->create( "b" );
+        if(!$ch->has("a_to_b")) $ch->create( "a_to_b", [ 'type' => 3 ] );
         for ( $i = 0; $i < 100; $i++ ){
             $user = \triagens\ArangoDb\Document::createFromArray( [] );
             $market = \triagens\ArangoDb\Document::createFromArray( [] );
-            $dh->store( $user, "users" );
-            $dh->store( $market, "markets" );
+            $dh->store( $user, "a" );
+            $dh->store( $market, "b" );
         }
-        MockDB::oneToOne( "users", "markets", "in_market" );
+        MockDB::oneToOne( "a", "b", "a_to_b" );
 
-        $usersCount = DB::getAll( "users" )->getCount();
-        $marketsCount = DB::getAll( "markets" )->getCount();
-        $min = $usersCount;
-        if( $marketsCount < $usersCount ) $min = $marketsCount;
+        $aCount = DB::getAll( "a" )->getCount();
+        $bCount = DB::getAll( "b" )->getCount();
+        $min = $aCount;
+        if( $bCount < $aCount ) $min = $bCount;
 
-        self::assertEquals( DB::getAll("in_market")->getCount(), $min );
+        self::assertEquals( DB::getAll("a_to_b")->getCount(), $min );
 
-        $ch->drop( "in_market" );
-        $ch->drop( "users" );
-        $ch->drop( "markets" );
+        $ch->drop( "a_to_b" );
+        $ch->drop( "a" );
+        $ch->drop( "b" );
     }
 
     function testOneToMany(){
