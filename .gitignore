@@ -1,4 +1,5 @@
 vendor/
 composer.lock
+*desktop.ini
 .DS_Store
 .idea/
