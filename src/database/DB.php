@@ -57,7 +57,7 @@ class DB
     public static function retrieve( $col, $_key ){
         $dh = self::getDocumentHandler();
 
-        if(!$dh->has( $col, $_key)) throw new \Exception( "document $_key not found in $col collection" );
+        if(!$dh->has( $col, $_key)) return false;
 
         return $dh->get( $col, $_key );
     }
@@ -205,6 +205,7 @@ class DB
         foreach ($collection_schema as $name => $details){
             if($ch->has($name)) continue;
 
+            /* Type is Required */
             $type = $details['type'];
             $type_code = 0;
             if($type === 'edge') $type_code = 3;
@@ -213,9 +214,12 @@ class DB
             $ch->create($name, [ 'type' => $type_code ]);
             print "created $type collection: $name \n";
 
+            /* Indexes are optional */
             if( !isset( $details['indexes'])) continue;
+
             $indexes = $details['indexes'];
             foreach ($indexes as $index) {
+                /* Indexes must have a type */
                 switch ($index['type']) {
                     case self::GEO :
                         $geoJson = null;
