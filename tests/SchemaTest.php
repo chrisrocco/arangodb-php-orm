@@ -7,18 +7,20 @@ use vector\ArangoORM\Models\Core\VertexModel;
 class SchemaTest extends BaseTest {
 
     function testOptionalSchema(){
-        IDontHaveSchema::create(
+        $model = IDontHaveSchema::create(
             [
                 "anything" => "any value"
             ]
         );
+
+        $val = $model->get( "boob" );
     }
 
     /**
      * @depends testOptionalSchema
      */
     function testRequiredSchemaPass(  ){
-        $model = IHaveSchema::create([
+        $model = IHaveStrictSchema::create([
             "objTest"  =>  IDontHaveSchema::create([]),
             "numTest"  =>  123,
             "strTest"  =>  "abc",
@@ -28,19 +30,47 @@ class SchemaTest extends BaseTest {
     function testRequiredSchemaFail(){
         $this->expectException( Exception::class );
 
-        IHaveSchema::create([
+        IHaveStrictSchema::create([
             "numTest"   =>  "abc"
         ]);
     }
 
+    function testLooseSchema(){
+        $model = IHaveLooseSchema::create([
+            "immaString"      => "asdf"
+        ]);
+
+        $model->get( "i might not exists but it's cool since the schema is loose" );
+    }
+
+    function testStrictSchema(){
+        $this->expectException( Exception::class );
+
+        $model = IHaveStrictSchema::create([
+            "objTest"  =>  IDontHaveSchema::create([]),
+            "numTest"  =>  123,
+            "strTest"  =>  "abc",
+        ]);
+
+        $model->get( "i must exists because the schema is strict" );
+    }
+
 }
 
-class IHaveSchema extends VertexModel {
+class IHaveStrictSchema extends VertexModel {
     static $collection = "iHaveSchema";
     static $schema = [
         "objTest"      => IDontHaveSchema::class,
         "numTest"   =>  "number",
         "strTest"   =>  "string"
+    ];
+}
+
+class IHaveLooseSchema extends VertexModel {
+    static $collection = "iHaveLooseSchema";
+    protected $strictSchema = false;
+    static $schema = [
+        "immaString" => "string"
     ];
 }
 

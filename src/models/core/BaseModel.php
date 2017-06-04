@@ -44,6 +44,9 @@ use triagens\ArangoDb\Document;
  */
 abstract class BaseModel {
 
+    static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
+    static $schema;
+    protected $strictSchema = true;
     /**
      * @var Document
      */
@@ -56,6 +59,7 @@ abstract class BaseModel {
         return $this->arango_document->getInternalId();
     }
     public function get($property){
+        $this->validateAccess( $property );
         return $this->arango_document->get($property);
     }
     public function toArray(){
@@ -104,6 +108,7 @@ abstract class BaseModel {
      * @param $data
      */
     public function update( $property, $data ){
+        $this->validateAccess( $property );
         $this->arango_document->set( $property, $data );
         DB::update( $this->arango_document );
     }
@@ -186,16 +191,6 @@ abstract class BaseModel {
         $data["date_created"] = date("F j, Y, g:i a");
     }
 
-    static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
-    /**
-     * @var array
-     *
-     * [
-     *      "property_name" => "class_name"
-     * ]
-     */
-    static $schema;
-
     static function forceSchema( $data ){
         if( static::getSchema() ){
             $schema = static::getSchema();
@@ -219,6 +214,12 @@ abstract class BaseModel {
             foreach ( $schema as $key => $type ){
                 if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
             }
+        }
+    }
+    function validateAccess( $property ){
+        if( $this->strictSchema && static::getSchema() ){
+            $schema = static::getSchema();
+            if( !isset($schema[$property]) ) Throw new Exception("You tried to access a property '$property' that is not garunteed by the model schema : ". self::class );
         }
     }
 }
