@@ -19,9 +19,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "vector\\ArangoORM\\": "src/",
-            "vector\\ArangoORM\\DB\\": "src/database/",
-            "vector\\ArangoORM\\Models\\Core\\": "src/models/core/"
+            "vector\\ArangoORM\\": "src/"
         }
     }
 }

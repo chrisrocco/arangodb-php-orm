@@ -148,7 +148,7 @@ abstract class BaseModel {
     protected static function getClass(){
         return static::class;
     }
-    protected static function getCollectionName(){
+    public static function getCollectionName(){
         if( static::$collection ){
             return static::$collection;
         }
