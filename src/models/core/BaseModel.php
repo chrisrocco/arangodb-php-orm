@@ -1,7 +1,9 @@
 <?php
 
 namespace vector\ArangoORM\Models\Core;
+use function Couchbase\defaultDecoder;
 use phpDocumentor\Reflection\Types\Integer;
+use ReflectionClass;
 use triagens\ArangoDb\Exception;
 use vector\ArangoORM\DB\DB;
 use triagens\ArangoDb\Document;
@@ -74,8 +76,8 @@ abstract class BaseModel {
      */
     static function create( $data )
     {
-        self::forceSchema( $data );
-        self::addMetaData( $data );
+        static::forceSchema( $data );
+        static::addMetaData( $data );
 
         $document = Document::createFromArray( $data );
         $key = DB::create( static::getCollectionName(), $document );
@@ -153,6 +155,11 @@ abstract class BaseModel {
 
         return static::getCollectionName();
     }
+    protected static function getSchema(){
+        if( static::$schema ){
+            return static::$schema;
+        }
+    }
 
     static function wrap( $arango_document ){
         $class = static::getClass();
@@ -190,12 +197,28 @@ abstract class BaseModel {
     static $schema;
 
     static function forceSchema( $data ){
-        if( !isset( static::$schema ) ) return;
-
-        foreach ( $data as $key => $value ){
-            if( !isset($schema[$key]) ) Throw new Exception( "Schema Error: property '$key' not allowed" );
-            $typeSafe = is_a( $value, $schema[$key] );
-            if( !$typeSafe ) Throw new Exception( "Schema Error: property '$key' is not of type " . $schema[$key] );
+        if( static::getSchema() ){
+            $schema = static::getSchema();
+            /* Make sure all values are allowed */
+            foreach ( $data as $key => $value ){
+                if( !isset($schema[$key]) ) Throw new \Exception( "Schema Error: property '$key' not allowed" );
+                $specified_type = $schema[$key];
+                switch ( $specified_type ){
+                    case "string":
+                        $typeSafe = is_string( $value );
+                        break;
+                    case "number";
+                        $typeSafe = is_numeric( $value );
+                        break;
+                    default:
+                        $typeSafe = is_a( $value, $specified_type );
+                }
+                if( !$typeSafe ) Throw new \Exception( "Schema Error: property '$key' is not of type " . $schema[$key] );
+            }
+            /* Make sure required fields exist */
+            foreach ( $schema as $key => $type ){
+                if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
+            }
         }
     }
 }
