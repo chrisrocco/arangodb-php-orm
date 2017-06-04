@@ -46,7 +46,7 @@ abstract class BaseModel {
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
     static $schema;
-    protected $strictSchema = true;
+    static $strictSchema = true;
     /**
      * @var Document
      */
@@ -165,6 +165,9 @@ abstract class BaseModel {
             return static::$schema;
         }
     }
+    protected static function isStrictSchema(){
+        return static::$strictSchema;
+    }
 
     static function wrap( $arango_document ){
         $class = static::getClass();
@@ -194,7 +197,12 @@ abstract class BaseModel {
     static function forceSchema( $data ){
         if( static::getSchema() ){
             $schema = static::getSchema();
-            /* Make sure all values are allowed */
+            /* Make sure schema fields exist */
+            foreach ( $schema as $key => $type ){
+                if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
+            }
+            if( static::isStrictSchema() == false ) return;
+            /* Make sure all user values are allowed */
             foreach ( $data as $key => $value ){
                 if( !isset($schema[$key]) ) Throw new \Exception( "Schema Error: property '$key' not allowed" );
                 $specified_type = $schema[$key];
@@ -210,14 +218,10 @@ abstract class BaseModel {
                 }
                 if( !$typeSafe ) Throw new \Exception( "Schema Error: property '$key' is not of type " . $schema[$key] );
             }
-            /* Make sure required fields exist */
-            foreach ( $schema as $key => $type ){
-                if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
-            }
         }
     }
     function validateAccess( $property ){
-        if( $this->strictSchema && static::getSchema() ){
+        if( static::isStrictSchema() && static::getSchema() ){
             $schema = static::getSchema();
             if( !isset($schema[$property]) ) Throw new Exception("You tried to access a property '$property' that is not garunteed by the model schema : ". self::class );
         }

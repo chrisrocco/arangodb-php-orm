@@ -37,7 +37,8 @@ class SchemaTest extends BaseTest {
 
     function testLooseSchema(){
         $model = IHaveLooseSchema::create([
-            "immaString"      => "asdf"
+            "immaString"      => "asdf",
+            "optionalPropertiesAllowed_butNotEnforced"  =>  "anything"
         ]);
 
         $model->get( "i might not exists but it's cool since the schema is loose" );
@@ -68,7 +69,7 @@ class IHaveStrictSchema extends VertexModel {
 
 class IHaveLooseSchema extends VertexModel {
     static $collection = "iHaveLooseSchema";
-    protected $strictSchema = false;
+    static $strictSchema = false;
     static $schema = [
         "immaString" => "string"
     ];
