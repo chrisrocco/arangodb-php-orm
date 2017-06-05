@@ -46,7 +46,7 @@ abstract class BaseModel {
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
     static $schema;
-    static $strictSchema = true;
+    static $strictSchema = false;
     /**
      * @var Document
      */
