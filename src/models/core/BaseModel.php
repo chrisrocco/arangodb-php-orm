@@ -46,7 +46,6 @@ abstract class BaseModel {
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
     static $schema;
-    static $strictSchema = false;
     /**
      * @var Document
      */
@@ -134,13 +133,6 @@ abstract class BaseModel {
 
         return self::wrapAll( $cursor );
     }
-    public static function search( $search_term ){
-        return;
-        // TODO: Find out how to do this in AQL
-        $AQL = "";
-        $bindings = [];
-        return DB::queryModel( $AQL, $bindings, static::getClass() );
-    }
 
     /*--------------------------------------------------*/
     /*--------------------- Helper ---------------------*/
@@ -164,12 +156,17 @@ abstract class BaseModel {
         if( static::$schema ){
             return static::$schema;
         }
-    }
-    protected static function isStrictSchema(){
-        return static::$strictSchema;
+        return null;
     }
 
+    /**
+     * @param $arango_document Document
+     * @return mixed
+     */
     static function wrap( $arango_document ){
+        $values = $arango_document->getAll();
+        self::forceSchema( $values );
+
         $class = static::getClass();
         $model = new $class;
         $model->arango_document = $arango_document;
@@ -185,14 +182,16 @@ abstract class BaseModel {
         }
         return $data_set;
     }
-
     static function idToKey ($idString) {
         return explode("/", $idString)[1];
     }
-
     protected static function addMetaData( &$data ){
         $data["date_created"] = date("F j, Y, g:i a");
     }
+
+    /*--------------------------------------*/
+    /*-------------- SCHEMA ----------------*/
+    /*--------------------------------------*/
 
     static function forceSchema( $data ){
         if( static::getSchema() ){
@@ -201,27 +200,10 @@ abstract class BaseModel {
             foreach ( $schema as $key => $type ){
                 if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
             }
-            if( static::isStrictSchema() == false ) return;
-            /* Make sure all user values are allowed */
-            foreach ( $data as $key => $value ){
-                if( !isset($schema[$key]) ) Throw new \Exception( "Schema Error: property '$key' not allowed" );
-                $specified_type = $schema[$key];
-                switch ( $specified_type ){
-                    case "string":
-                        $typeSafe = is_string( $value );
-                        break;
-                    case "number";
-                        $typeSafe = is_numeric( $value );
-                        break;
-                    default:
-                        $typeSafe = is_a( $value, $specified_type );
-                }
-                if( !$typeSafe ) Throw new \Exception( "Schema Error: property '$key' is not of type " . $schema[$key] );
-            }
         }
     }
     function validateAccess( $property ){
-        if( static::isStrictSchema() && static::getSchema() ){
+        if( static::getSchema() ){
             $schema = static::getSchema();
             if( !isset($schema[$property]) ) Throw new Exception("You tried to access a property '$property' that is not garunteed by the model schema : ". self::class );
         }

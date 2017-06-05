@@ -281,18 +281,6 @@ class DB
         if($ch->has( $collection_name )) $ch->drop( $collection_name );
     }
 
-
-    /**
-     * @param $document_schema mixed
-     *
-     * [
-     *      "collection_name" => [
-     *          [
-     *              // document here
-     *          ]
-     *      ]
-     * ]
-     */
     static function createDocuments( $document_schema ){
         $dh = self::getDocumentHandler();
 
