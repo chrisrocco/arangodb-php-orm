@@ -58,7 +58,6 @@ abstract class BaseModel {
         return $this->arango_document->getInternalId();
     }
     public function get($property){
-        $this->validateAccess( $property );
         return $this->arango_document->get($property);
     }
     public function toArray(){
@@ -107,7 +106,6 @@ abstract class BaseModel {
      * @param $data
      */
     public function update( $property, $data ){
-        $this->validateAccess( $property );
         $this->arango_document->set( $property, $data );
         DB::update( $this->arango_document );
     }
@@ -200,12 +198,6 @@ abstract class BaseModel {
             foreach ( $schema as $key => $type ){
                 if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
             }
-        }
-    }
-    function validateAccess( $property ){
-        if( static::getSchema() ){
-            $schema = static::getSchema();
-            if( !isset($schema[$property]) ) Throw new Exception("You tried to access a property '$property' that is not garunteed by the model schema : ". self::class );
         }
     }
 }

@@ -3,6 +3,9 @@ use vector\ArangoORM\Models\Core\VertexModel;
 
 class SchemaTest extends BaseTest {
 
+    /**
+     * @group schema
+     */
     function testOptionalSchema(){
         $model = IDontHaveSchema::create(
             [
@@ -14,26 +17,35 @@ class SchemaTest extends BaseTest {
     }
 
     /**
+     * @group schema
      * @depends testOptionalSchema
      */
     function testRequiredSchemaPass(  ){
-        $model = IHaveStrictSchema::create([
+        $model = IHaveSchema::create([
             "objTest"  =>  IDontHaveSchema::create([]),
             "numTest"  =>  123,
             "strTest"  =>  "abc",
         ]);
     }
 
+    /**
+     * @group schema
+     */
     function testRequiredSchemaFail(){
         $this->expectException( Exception::class );
 
-        IHaveStrictSchema::create([
+        IHaveSchema::create([
             "numTest"   =>  "abc"
         ]);
     }
 
+    /**
+     * @group schema
+     */
     function testLooseSchema(){
-        $model = IHaveLooseSchema::create([
+        $model = IHaveSchema::create([
+            "numTest"       => "string",
+            "strTest"       =>  123,
             "immaString"      => "asdf",
             "optionalPropertiesAllowed_butNotEnforced"  =>  "anything"
         ]);
@@ -41,34 +53,13 @@ class SchemaTest extends BaseTest {
         $model->get( "i might not exists but it's cool since the schema is loose" );
     }
 
-    function testStrictSchema(){
-        $this->expectException( Exception::class );
-
-        $model = IHaveStrictSchema::create([
-            "objTest"  =>  IDontHaveSchema::create([]),
-            "numTest"  =>  123,
-            "strTest"  =>  "abc",
-        ]);
-
-        $model->get( "i must exists because the schema is strict" );
-    }
-
 }
 
-class IHaveStrictSchema extends VertexModel {
+class IHaveSchema extends VertexModel {
     static $collection = "iHaveSchema";
     static $schema = [
-        "objTest"      => IDontHaveSchema::class,
         "numTest"   =>  "number",
         "strTest"   =>  "string"
-    ];
-}
-
-class IHaveLooseSchema extends VertexModel {
-    static $collection = "iHaveLooseSchema";
-    static $strictSchema = false;
-    static $schema = [
-        "immaString" => "string"
     ];
 }
 
