@@ -90,7 +90,7 @@ abstract class BaseModel {
     /**
      * Fetches a document from the database, wraps it in a model, and returns it.
      * @param $_key
-     * @return mixed
+     * @return bool|static
      */
     public static function retrieve( $_key ){
         $doc = DB::retrieve( static::getCollectionName(), $_key );
