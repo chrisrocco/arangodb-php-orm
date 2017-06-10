@@ -90,7 +90,7 @@ abstract class BaseModel {
     /**
      * Fetches a document from the database, wraps it in a model, and returns it.
      * @param $_key
-     * @return bool|BaseModel
+     * @return mixed
      */
     public static function retrieve( $_key ){
         $doc = DB::retrieve( static::getCollectionName(), $_key );
@@ -159,7 +159,7 @@ abstract class BaseModel {
 
     /**
      * @param $arango_document Document
-     * @return BaseModel
+     * @return static
      */
     static function wrap( $arango_document ){
         $values = $arango_document->getAll();
