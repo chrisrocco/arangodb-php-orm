@@ -74,7 +74,7 @@ abstract class BaseModel {
     /**
      * Creates a new document in the database, wraps it into a model, and returns the model
      * @param $data array properties
-     * @return mixed
+     * @return static
      */
     static function create( $data )
     {
@@ -124,7 +124,7 @@ abstract class BaseModel {
     /**
      * Query by example.
      * @param $example array            [ 'email' => 'chris.rocco7@gmail.com' ]
-     * @return BaseModel[]
+     * @return static[]
      */
     public static function getByExample( $example ){
         $cursor = DB::getByExample( static::getCollectionName(), $example );
