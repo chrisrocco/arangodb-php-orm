@@ -42,7 +42,7 @@ use triagens\ArangoDb\Document;
  * [:] wrapAll( cursor )                        // Used after DB queries
  * [:] addMetaData( data )                      // Called on object creation
  */
-abstract class BaseModel {
+abstract class BaseModel implements \JsonSerializable {
 
     static $collection;     // uses a default collection name. For example, the BaseModel, 'User' would use 'users'. If this gets overridden, you will have to create the DB collection manually.
     static $schema;
@@ -199,5 +199,9 @@ abstract class BaseModel {
                 if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
             }
         }
+    }
+
+    public function jsonSerialize() {
+        return $this->toArray();
     }
 }
