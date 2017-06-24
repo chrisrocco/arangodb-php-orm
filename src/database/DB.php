@@ -104,7 +104,7 @@ class DB
      * @param $query_string
      * @param array $bindVars
      * @param $modelClass BaseModel::class The class of the model type
-     * @return BaseModel[]
+     * @return static[]
      */
     public static function queryModel($query_string, $bindVars = [], $modelClass){
         $cursor = self::query($query_string, $bindVars, false);
