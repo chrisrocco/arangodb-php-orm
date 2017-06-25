@@ -196,7 +196,8 @@ abstract class BaseModel implements \JsonSerializable {
             $schema = static::getSchema();
             /* Make sure schema fields exist */
             foreach ( $schema as $key => $type ){
-                if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
+                if( !isset( $data[$key] ) ) $data[$key] = null;
+//                if( !isset( $data[$key] ) ) Throw new \Exception( "Schema Error: missing required property '$key'" );
             }
         }
     }
