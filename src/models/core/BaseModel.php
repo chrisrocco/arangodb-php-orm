@@ -175,6 +175,10 @@ abstract class BaseModel implements \JsonSerializable {
         $data_set = [];
         while($cursor->valid()){
             $doc = $cursor->current();
+            if ($doc === null) {
+                $cursor->next();
+                continue;
+            }
             $data_set[] = self::wrap($doc);
             $cursor->next();
         }
